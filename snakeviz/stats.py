@@ -23,11 +23,11 @@ def table_rows(stats):
         name = '{0}:{1}({2})'.format(*k)
 
         if v[0] == v[1]:
-            calls = str(v[0])
+            calls = '{0:,}'.format(v[0])
         else:
-            calls = '{1}/{0}'.format(v[0], v[1])
+            calls = '{1:,}/{0:,}'.format(v[0], v[1])
 
-        fmt = '{0:.4g}'.format
+        fmt = '{0:,.6g}'.format
 
         tot_time = fmt(v[2])
         cum_time = fmt(v[3])
